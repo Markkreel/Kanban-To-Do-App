@@ -2,6 +2,8 @@
 
 TaskTide is a modern, intuitive task management application built with Next.js and TypeScript. It provides a Kanban-style interface for organizing and tracking tasks through different stages of completion.
 
+![1739991629005](image/README/1739991629005.png)
+
 ## Features
 
 ### Current Features
@@ -41,14 +43,17 @@ TaskTide is a modern, intuitive task management application built with Next.js a
 ## Usage
 
 1. **Creating a Task**:
+
    - Fill in the task title and description in the form at the top
    - Click "Add Task" to create a new task in the Pending column
 
 2. **Moving Tasks**:
+
    - Drag and drop tasks between columns to update their status
    - Tasks can be moved from Pending → Ongoing → Completed
 
 3. **Deleting Tasks**:
+
    - Hover over a task card to reveal the delete button
    - Click the X icon to remove the task
 
@@ -57,14 +62,17 @@ TaskTide is a modern, intuitive task management application built with Next.js a
 The following features are planned for future releases:
 
 1. **Edit Task Feature**
+
    - Allow users to modify task titles and descriptions
    - Enable status updates through an edit modal
 
 2. **Task Groups Feature**
+
    - Implement project or category-based task grouping
    - Add filtering and sorting by groups
 
 3. **Time and Date Features**
+
    - Add due dates to tasks
    - Implement task scheduling
    - Add reminders and notifications for upcoming deadlines
