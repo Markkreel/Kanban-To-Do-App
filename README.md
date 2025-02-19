@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TaskTide
+
+TaskTide is a modern, intuitive task management application built with Next.js and TypeScript. It provides a Kanban-style interface for organizing and tracking tasks through different stages of completion.
+
+## Features
+
+### Current Features
+
+- **Kanban Board Layout**: Organize tasks in three columns - Pending, Ongoing, and Completed
+- **Drag and Drop**: Easily move tasks between different status columns
+- **Visual Status Indicators**: Color-coded indicators show task status at a glance
+- **Task Management**:
+  - Create new tasks with title and description
+  - Delete tasks when completed or no longer needed
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- **Real-time Updates**: Instant visual feedback for all task operations
+- **Toast Notifications**: User-friendly notifications for task creation, movement, and deletion
+
+## Technology Stack
+
+- **Frontend Framework**: Next.js
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Drag and Drop**: @hello-pangea/dnd
+- **UI Components**: Custom components with modern design
+- **Notifications**: Sonner toast notifications
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Creating a Task**:
+   - Fill in the task title and description in the form at the top
+   - Click "Add Task" to create a new task in the Pending column
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Moving Tasks**:
+   - Drag and drop tasks between columns to update their status
+   - Tasks can be moved from Pending → Ongoing → Completed
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Deleting Tasks**:
+   - Hover over a task card to reveal the delete button
+   - Click the X icon to remove the task
 
-## Learn More
+## Future Development
 
-To learn more about Next.js, take a look at the following resources:
+The following features are planned for future releases:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Edit Task Feature**
+   - Allow users to modify task titles and descriptions
+   - Enable status updates through an edit modal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Task Groups Feature**
+   - Implement project or category-based task grouping
+   - Add filtering and sorting by groups
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Time and Date Features**
+   - Add due dates to tasks
+   - Implement task scheduling
+   - Add reminders and notifications for upcoming deadlines
