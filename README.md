@@ -73,6 +73,7 @@ The following features are planned for future releases:
    - Implement task scheduling
    - Add reminders and notifications for upcoming deadlines
 
-**Last updated:** 20-02-2025
-
-**Last checked:** 21-02-2025
+   ```
+   **Last updated:** 20-02-2025
+   **Last checked:** 21-02-2025
+   ```
