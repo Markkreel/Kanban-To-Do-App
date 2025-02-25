@@ -79,4 +79,4 @@ The following features are planned for future releases:
 
    ***
 
-   **Last updated:** 20-02-2025 ⸻ **Last checked:** 24-02-2025
+   **Last Updated:** 20-02-2025 ⸻ **Last Reviewed:** 26-02-2025
