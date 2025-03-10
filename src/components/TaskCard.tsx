@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Draggable } from '@hello-pangea/dnd';
+import { Draggable } from "@hello-pangea/dnd";
 
 type TaskCardProps = {
   id: string;
@@ -8,18 +8,25 @@ type TaskCardProps = {
   description: string;
   index: number;
   onDelete: (id: string) => void;
-  status: 'pending' | 'ongoing' | 'completed';
+  status: "pending" | "ongoing" | "completed";
 };
 
-export default function TaskCard({ id, title, description, index, onDelete, status }: TaskCardProps) {
+export default function TaskCard({
+  id,
+  title,
+  description,
+  index,
+  onDelete,
+  status,
+}: TaskCardProps) {
   const getStatusColor = () => {
     switch (status) {
-      case 'completed':
-        return 'bg-green-500';
-      case 'ongoing':
-        return 'bg-yellow-500';
+      case "completed":
+        return "bg-green-500";
+      case "ongoing":
+        return "bg-yellow-500";
       default:
-        return 'bg-gray-400';
+        return "bg-gray-400";
     }
   };
 
@@ -53,7 +60,9 @@ export default function TaskCard({ id, title, description, index, onDelete, stat
           </button>
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full ${getStatusColor()}`} />
-            <h3 className="text-lg font-semibold text-gray-900 pr-6">{title}</h3>
+            <h3 className="text-lg font-semibold text-gray-900 pr-6">
+              {title}
+            </h3>
           </div>
           <p className="text-gray-600 mt-2">{description}</p>
         </div>
