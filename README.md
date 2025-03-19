@@ -2,7 +2,7 @@
 
 TaskTide is a modern, intuitive task management application built with Next.js and TypeScript. It provides a Kanban-style interface for organizing and tracking tasks through different stages of completion.
 
-![1739991629005](image/README/1739991629005.png)
+![1742413833748](image/README/1742413833748.png)
 
 ## Features
 
