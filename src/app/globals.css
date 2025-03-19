@@ -48,6 +48,11 @@ body {
 @layer base {
   * {
     border-color: var(--border);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
   }
   body {
     background-color: var(--background);
