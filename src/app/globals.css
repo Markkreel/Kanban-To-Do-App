@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 body {
-  font-family: "Geist", sans-serif;
+  font-family: "SF Pro Display", sans-serif;
 }
 
 @layer base {
