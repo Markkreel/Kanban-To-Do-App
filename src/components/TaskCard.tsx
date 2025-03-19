@@ -37,11 +37,11 @@ export default function TaskCard({
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className="bg-white p-4 rounded-lg shadow-lg group relative border border-gray-200"
+          className="bg-zinc-900 p-4 rounded-lg shadow-lg group relative border border-zinc-800"
         >
           <button
             onClick={() => onDelete(id)}
-            className="absolute top-2 right-2 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 text-zinc-500 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,11 +60,9 @@ export default function TaskCard({
           </button>
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full ${getStatusColor()}`} />
-            <h3 className="text-lg font-semibold text-gray-900 pr-6">
-              {title}
-            </h3>
+            <h3 className="text-lg font-semibold text-white pr-6">{title}</h3>
           </div>
-          <p className="text-gray-600 mt-2">{description}</p>
+          <p className="text-zinc-400 mt-2">{description}</p>
         </div>
       )}
     </Draggable>
