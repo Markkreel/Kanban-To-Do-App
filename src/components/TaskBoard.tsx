@@ -126,10 +126,10 @@ export default function TaskBoard() {
   };
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div className="min-h-screen bg-black p-8">
       <form
         onSubmit={handleAddTask}
-        className="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200"
+        className="mb-8 p-6 bg-zinc-900 rounded-lg border border-zinc-800"
       >
         <div className="mb-4">
           <input
@@ -137,7 +137,7 @@ export default function TaskBoard() {
             placeholder="Task title"
             value={newTask.title}
             onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-2 bg-black border border-zinc-800 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-700"
           />
         </div>
         <div className="mb-4">
@@ -147,13 +147,13 @@ export default function TaskBoard() {
             onChange={(e) =>
               setNewTask({ ...newTask, description: e.target.value })
             }
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-2 bg-black border border-zinc-800 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-700"
           />
         </div>
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
+            className="px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-zinc-700 transition-colors"
           >
             Add Task
           </button>
@@ -165,9 +165,9 @@ export default function TaskBoard() {
           {columns.map((column) => (
             <div
               key={column.id}
-              className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+              className="bg-zinc-900 rounded-lg p-4 border border-zinc-800"
             >
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
+              <h2 className="text-xl font-bold text-white mb-4">
                 {column.title}
               </h2>
               <Droppable droppableId={column.id}>
