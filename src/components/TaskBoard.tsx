@@ -4,8 +4,17 @@ import { useState } from "react";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 import TaskCard from "./TaskCard";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 type Task = {
   id: string;
@@ -40,16 +49,20 @@ const initialColumns: Column[] = [
 
 export default function TaskBoard() {
   const [columns, setColumns] = useState<Column[]>(initialColumns);
-  const [newTask, setNewTask] = useState({ title: "", description: "" });
+  const form = useForm({
+    defaultValues: {
+      title: "",
+      description: "",
+    },
+  });
 
-  const handleAddTask = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newTask.title.trim()) return;
+  const handleAddTask = (values: { title: string; description: string }) => {
+    if (!values.title.trim()) return;
 
     const task: Task = {
       id: Math.random().toString(36).substr(2, 9),
-      title: newTask.title,
-      description: newTask.description,
+      title: values.title,
+      description: values.description,
       createdAt: new Date(),
     };
 
@@ -68,7 +81,7 @@ export default function TaskBoard() {
       variant: "default",
     });
 
-    setNewTask({ title: "", description: "" });
+    form.reset();
   };
 
   const handleDragEnd = (result: any) => {
@@ -127,38 +140,45 @@ export default function TaskBoard() {
 
   return (
     <div className="min-h-screen bg-black p-8">
-      <form
-        onSubmit={handleAddTask}
-        className="mb-8 p-6 bg-zinc-900 rounded-lg border border-zinc-800"
-      >
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Task title"
-            value={newTask.title}
-            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            className="w-full p-2 bg-black border border-zinc-800 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(handleAddTask)}
+          className="mb-8 p-6 bg-zinc-900 rounded-lg border border-zinc-800 space-y-4"
+        >
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Title</FormLabel>
+                <FormControl>
+                  <Input placeholder="Task title" {...field} />
+                </FormControl>
+              </FormItem>
+            )}
           />
-        </div>
-        <div className="mb-4">
-          <textarea
-            placeholder="Task description"
-            value={newTask.description}
-            onChange={(e) =>
-              setNewTask({ ...newTask, description: e.target.value })
-            }
-            className="w-full p-2 bg-black border border-zinc-800 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-white">Description</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Task description" {...field} />
+                </FormControl>
+              </FormItem>
+            )}
           />
-        </div>
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-zinc-700 transition-colors"
-          >
-            Add Task
-          </button>
-        </div>
-      </form>
+          <div className="flex justify-center">
+            <Button
+              type="submit"
+              className="bg-black text-white hover:bg-green-600"
+            >
+              Add Task
+            </Button>
+          </div>
+        </form>
+      </Form>
 
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
