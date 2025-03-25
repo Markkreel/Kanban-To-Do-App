@@ -57,7 +57,14 @@ export default function TaskBoard() {
   });
 
   const handleAddTask = (values: { title: string; description: string }) => {
-    if (!values.title.trim()) return;
+    if (!values.title.trim()) {
+      toast({
+        title: "Error",
+        description: "Can't allow empty task!",
+        variant: "destructive",
+      });
+      return;
+    }
 
     const task: Task = {
       id: Math.random().toString(36).substr(2, 9),
