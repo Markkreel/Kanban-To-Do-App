@@ -83,9 +83,11 @@ export default function TaskBoard() {
     );
 
     toast({
-      title: "Task Created",
-      description: `Task "${task.title}" has been added to Pending.`,
+      title: "Task Added Successfully",
+      description: `"${task.title}" has been added to your Pending tasks`,
       variant: "default",
+      className: "bg-green-500 text-white border-none",
+      duration: 3000,
     });
 
     form.reset();
