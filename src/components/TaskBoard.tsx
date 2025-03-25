@@ -192,7 +192,7 @@ export default function TaskBoard() {
           {columns.map((column) => (
             <div
               key={column.id}
-              className="bg-zinc-900 rounded-lg p-4 border border-zinc-800"
+              className="bg-zinc-900 rounded-lg p-4 border border-zinc-800 h-[calc(100vh-20rem)] flex flex-col"
             >
               <h2 className="text-xl font-bold text-white mb-4">
                 {column.title}
@@ -202,7 +202,7 @@ export default function TaskBoard() {
                   <div
                     {...provided.droppableProps}
                     ref={provided.innerRef}
-                    className="space-y-4"
+                    className="space-y-4 overflow-y-auto flex-1"
                   >
                     {column.tasks.map((task, index) => (
                       <TaskCard
